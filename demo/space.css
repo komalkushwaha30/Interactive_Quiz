@@ -1,0 +1,301 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background-image: url('https://t4.ftcdn.net/jpg/01/99/10/23/360_F_199102302_LpSGaDWCp5WzgXz30956ZS3O7JAunkJy.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow: hidden;
+    background-size: cover;
+    animation: backgroundAnimation 15s ease-in-out infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-size: 100%; }
+    50% { background-size: 105%; }
+    100% { background-size: 100%; }
+}
+
+.extra-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.extra {
+    border: 1px solid black;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    animation: popIn 0.5s ease-in-out;
+    background-color: #a5a7e570;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); }
+    100% { transform: scale(1); }
+}
+
+#quiz-container {
+    background-color: rgba(255, 255, 255, 0.60);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+#question-container h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    background-color: rgb(127, 127, 193);
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.option {
+    padding: 15px;
+    font-size: large;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    min-width: 150px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.option.selected {
+    border: 2px solid blue; /* Optional: Highlight selected option */
+}
+
+.option.correct {
+    background-color: #28a745; /* Green for correct */
+    color: white;
+}
+
+.option.incorrect {
+    background-color: #dc3545; /* Red for incorrect */
+    color: white;
+}
+
+.option:hover {
+    background-color: #5692d3;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.option:active {
+    transform: scale(0.98);
+}
+
+
+#score-message {
+    animation: fadeIn 0.5s ease-in-out;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: larger;
+}
+
+#submit-button {
+    margin-top: 20px;
+    font-size: large;
+    padding: 10px;
+    background-color: rgb(80, 80, 146);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit-button:hover {
+    background-color: rgb(166, 166, 226);
+}
+
+#submit-button:disabled {
+    background-color: rgb(59, 59, 185);
+    /* cursor: not-allowed; */
+}
+
+.selected {
+    background-color: #0056b3;
+    color: white;
+    border: 2px solid #004494;
+    transform: scale(1.05);
+}
+
+.container .result-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    background-color: black;
+    border-radius: 6px;
+    color: white;
+    border: 2px solid 'pink';
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.result-box h2{
+    font-size: 52px;
+}
+.result-box .percentage-container{
+    width: 300px;
+    /* background: seagreen; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 40px;
+}
+
+.percentage-container .circular-progress{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: conic-gradient(#c40094 3.6deg, rgba(255, 255, 255, .1) 0deg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.percentage-container .circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    background: black;
+    border-radius: 50%;
+}
+
+.percentage-container .progress-value{
+    position: relative;
+    font-size: 45px;
+    font-weight: 600;
+
+}
+
+.percentage-container .score-text{
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.result-box .buttons{
+    display: flex;
+}
+
+.buttons button{
+    width: 130px;
+    height: 47px;
+    background: #c40094;
+    border: 2px solid #c40094;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    margin: 0 20px 20px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.buttons button:nth-child(1):hover {
+    background: #950170;
+    border-color: #950170;
+}
+
+
+.buttons button:nth-child(2) {
+    background: transparent;
+    color: #c40094;
+}
+
+.buttons button:nth-child(2):hover{
+    background: transparent;
+    color: white;
+}
+
+
+/* Add a blur effect to the background */
+.blur-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* Slightly tinted background */
+    backdrop-filter: blur(8px); /* Adjust the blur amount as needed */
+    z-index: 1;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Make the blur effect visible when the result box is shown */
+.blur-background.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Ensure the result box is on top of the blur effect */
+.result-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    background-color: black;
+    border-radius: 6px;
+    color: white;
+    border: 2px solid 'pink';
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2; /* Ensure it is above the blur effect */
+}
+
+
+#go{
+    text-decoration: none;
+    color: white;
+}

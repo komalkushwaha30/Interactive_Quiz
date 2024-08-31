@@ -1,0 +1,170 @@
+/* General Styles for the entire page */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Robot'; /* Font family for consistent styling */
+    background-color: #f4f4f4; /* Light Gray background for the entire page */
+}
+
+/* Styles for the main container to center content */
+.container-fluid {
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/008/889/844/small/quiz-set-in-doodle-style-illustration-icon-question-symbol-for-print-and-design-quiz-and-exam-concept-isolated-element-on-black-background-collection-of-sign-for-school-and-event-vector.jpg');
+    background-size: cover; /* Ensure background image covers the entire area */
+    width: 100%;
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: moveBackground 30s linear infinite; /* Animation for moving background */
+}
+
+/* Animation for moving background image */
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Styles for the inner content box */
+.secondDiv {
+    background-color: #ffffff99; /* Translucent white background */
+    border-radius: 2rem; /* Rounded corners */
+    text-align: center; /* Center text */
+    box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 3rem; /* Padding inside the box */
+    max-width: 90%; /* Max width for responsiveness */
+    animation: fadeIn 1s ease-out; /* Fade-in animation */
+}
+
+/* Main title styles */
+.title-main{
+    background-color: #391551a8; /* Semi-transparent dark blue background */
+    color: #ffffff; /* White text color */
+    border-radius: 1rem; /* Rounded corners */
+    padding: 1rem; /* Padding around the title */
+    margin-bottom: 1rem; /* Space below the title */
+    font-weight: 600; /* Bold text */
+    font-size: 2rem; /* Large font size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for the main title */
+.title-main:hover {
+    transform: scale(1.05); /* Slightly enlarge the title */
+    background-color: #7c6c87a8; /* Change background to a darker blue on hover */
+}
+
+/* Styles for the buttons */
+.btn.custom-button {
+    background-color: #432a2a99; /* Translucent white background */
+    color: white; /* Dark gray text for contrast */
+    padding: 0.75rem 1.5rem; /* Padding inside the button */
+    font-size: 1.25rem; /* Larger font size */
+    font-weight: 600; /* Bold text */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions on hover */
+    width: 100%; /* Full width of the column */
+}
+
+/* Hover effect for buttons */
+.btn.custom-button:hover {
+    transform: scale(1.1); /* Slightly enlarge the button */
+    background-color: #695f5f99; /* Darker teal background on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow on hover */
+}
+
+/* Modal content styles */
+.modal-content{
+    background-color: #212121; /* Dark background for the modal */
+    border-radius: 1rem; /* Rounded corners */
+    padding: 2rem; /* Padding inside the modal */
+    border: none; /* Remove border */
+    color: white; /* White text for readability */
+    animation: slideInUp 0.5s ease-out; /* Slide-in animation */
+}
+
+
+.modal-title{
+    background-color: rgb(164, 150, 150);
+    padding: 20px;
+    border-radius: 10px;
+    color: #212121;
+}
+/* Modal body content styles */
+.modal-body {
+    background-color: rgb(164, 150, 150); /* Dark background for modal body */
+    padding: 1.5rem; /* Padding inside the modal body */
+    color: #ffffff; /* White text */
+    border-radius: 10px;
+    color: #212121;
+    font-weight: bold;
+}
+
+/* Styles for the modal footer button */
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with invisible */
+    }
+    to {
+        opacity: 1; /* Fade to fully visible */
+    }
+}
+
+/* Slide-in animation from the bottom */
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%); /* Start from below the screen */
+    }
+    to {
+        transform: translateY(0); /* Slide up to the original position */
+    }
+}
+
+/* Responsive adjustments for tablets */
+@media (max-width: 768px) {
+    .secondDiv {
+        padding: 2rem; /* Reduce padding for smaller screens */
+    }
+
+    .title-main {
+        font-size: 1.5rem; /* Smaller font size for title */
+        padding: 1rem; /* Adjust padding */
+    }
+
+    .custom-button {
+        font-size: 1rem; /* Smaller font size for buttons */
+        padding: 0.5rem 1rem; /* Adjust padding */
+    }
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 480px) {
+    .secondDiv {
+        padding: 1.5rem; /* Further reduce padding */
+    }
+
+    .title-main {
+        font-size: 1.25rem; /* Smaller font size for title */
+        padding: 0.75rem; /* Adjust padding */
+    }
+
+    .custom-button {
+        font-size: 0.875rem; /* Smaller font size for buttons */
+        padding: 0.5rem 1rem; /* Adjust padding */
+    }
+}
+
+.btn-ok{
+    background-color: #391551a8;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+
+}
+

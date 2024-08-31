@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.result-container {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.gauge {
+    width: 200px;
+    height: 100px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.gauge .semi-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 100px 100px 0 0;
+    background: linear-gradient(to right, #4CAF50, #f44336);
+}
+
+.needle {
+    width: 2px;
+    height: 80px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-origin: bottom;
+    transform: rotate(0deg);
+    transition: transform 1s ease-out;
+}
+
+.score-text {
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.party-popper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    animation: popper-animation 1s forwards;
+}
+
+@keyframes popper-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
